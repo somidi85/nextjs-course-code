@@ -6,7 +6,19 @@ const ClientProjectPage = () => {
   console.log(router.pathname);
   console.log(router.query);
 
-  return <div>ClientProjectPage</div>;
+  function loadProjectHandler() {
+    router.push({
+      pathname: "/clients/[id]/[clientprojectid]",
+      query: { id: "max", clientprojectid: "projecta" },
+    });
+  }
+
+  return (
+    <div>
+      <h1>ClientProjectPage</h1>
+      <button onClick={loadProjectHandler}>Load Project A</button>
+    </div>
+  );
 };
 
 export default ClientProjectPage;
